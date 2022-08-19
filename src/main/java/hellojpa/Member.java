@@ -1,4 +1,6 @@
 package hellojpa;
+import org.hibernate.annotations.common.reflection.XMember;
+
 import javax.persistence.*;
 import java.security.PrivilegedAction;
 
@@ -46,7 +48,22 @@ public class Member {
 
     public void setTeam(Team team) {
         this.team = team;
+        //meeber에 setteam을 할때
+        team.getMembers().add(this);
+        //이걸 넣어서, 하나만 호출해도 걸리도록 하는 것이다.
+        //나자신, member의 instence를 넣어야 하니까 this로 넣기
     }
+
+// 단순한 getter setter관례랑 이름을 통해 분리가 가능한 것이다.
+
+//    public void changeTeam(Team team){
+//        this.team = team;
+//        team.getMembers().add(this);
+//    }
+
+
+
+
 }
 
 
