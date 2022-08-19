@@ -19,8 +19,6 @@ public class JpaMain {
 
             em.persist(team);
 
-            //우선 team 객체를 하나 만들어서 저장한 다음에
-
             Member member = new Member();
             member.setUsername("member1");
             member.setTeam(team); //*
@@ -30,7 +28,6 @@ public class JpaMain {
 
             em.persist(member);
 //            team.getMembers().add(member);
-
 //            em.flush();
 //            em.clear();
 
